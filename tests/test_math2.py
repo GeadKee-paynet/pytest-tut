@@ -2,7 +2,6 @@ import pytest
 
 ## pytest.mark,parametrize
 
-
 products = [
   (2, 3, 5),            # postive integers
   (1, 99, 99),          # identity
@@ -12,6 +11,7 @@ products = [
   (2.5, 6.7, 16.75)     # floats
 ]
 
+@pytest.mark.math
 @pytest.mark.parametrize("a, b, product", products)
 def test_multiplication(a, b, product):
     assert a * b == product
