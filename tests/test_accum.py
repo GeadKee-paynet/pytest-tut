@@ -1,8 +1,15 @@
 import pytest
-from stuffs.accum import Accumulator
+from stuff.accum import Accumulator
 
 ## TO RUN SPECIFIC FUNCTION FROM A MODULE, 
 ## IN TERMINAL, "pytest the/path/to/file.py::function_name"
+
+
+# Fixtures
+# --------------------------------------------------------------------------------
+@pytest.fixture
+def accum():
+  return Accumulator()
 
 @pytest.mark.accumulator
 def testAccumulatorInit(accum):

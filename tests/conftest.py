@@ -1,19 +1,21 @@
 
-## PYTEST WILL FIND ALL FIXTURES IN THIS FILE - "conftest.py"
+# ## PYTEST WILL FIND ALL FIXTURES IN THIS FILE - "conftest.py"
 
-import pytest
-from stuffs.accum import Accumulator
+# import pytest
+# from stuffs.accum import Accumulator
 
-@pytest.fixture
-def accum():
-    ##    yield is a generator
-    yield Accumulator()
-    ## whenever there's yield in a function, 
-    ## then everything before this function the SETUP steps
-    ## everything after is the CLEAN steps
+# ## this code block below is a generator 
 
-    print("Done with the test!")
+# @pytest.fixture
+# def accum(scope = "class"):
+#     ##    yield is a generator
+#     yield Accumulator()
+#     ## whenever there's yield in a function, 
+#     ## then everything before this function the SETUP steps
+#     ## everything after is the CLEAN steps
 
-@pytest.fixture
-def accum2():
-    return Accumulator()
+#     print("Done with the test!")
+
+# @pytest.fixture
+# def accum2():
+#     return Accumulator()
