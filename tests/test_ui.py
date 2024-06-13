@@ -20,11 +20,13 @@ def test_acmebank_login(page:Page):
     # "expect" follows concept web-first assertion
     expect(page.locator("tag=div").get_by_text("logo-w")).to_be_visible
     expect(page.locator("tag=div").get_by_text("form-group")).to_be_visible
+    # expect(page.locator("xpath=class=classname").get_by_text("form-group")).to_be_visible         # for locating by class
     expect(page.get_by_text("Add Account")).to_be_visible()
     expect(page.get_by_text("Make Payment")).to_be_visible()
     expect(page.get_by_text("View Statement")).to_be_visible()
     expect(page.get_by_text("Request Increase")).to_be_visible()
     expect(page.get_by_text("Pay Now")).to_be_visible()
+
 
     warning_msg = re.compile(r'Your nearest branch closes in:( \d+[hms])+')
     expect(page.locator('id=time')).to_have_text(warning_msg)
